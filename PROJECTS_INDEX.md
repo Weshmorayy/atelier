@@ -2,7 +2,7 @@
 
 | Client | Slug | Repo GitHub | Type | Ville | Statut | Date |
 |--------|------|-------------|------|-------|--------|------|
-| Patisserie Docteur Cakes | docteurcakes | Weshmorayy/docteurcakes-website | Vitrine | Abidjan | 🔵 En cours | 2026-09 |
+| — | — | — | — | — | — | — |
 
 ---
 

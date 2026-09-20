@@ -9,24 +9,31 @@ description: Workflow de build et livraison (Étape 4 du processus)
 
 ---
 
-## Étape 1 — Initialiser le projet
+## Étape 1 — Vérifier le scaffolding projet
+
+Le dossier `~/atelier/<slug>-website/` avec son `.docs/` doit avoir été créé via la commande `new-project` dans Termux (lancée par l'USER après approbation du plan design).
+
+Vérifier qu'il existe :
+```bash
+ls ~/atelier/<slug>-website/.docs/
+```
+
+Si absent → demander à l'USER de lancer `new-project` d'abord.
+
+Une fois confirmé, initialiser Next.js dans ce dossier :
 
 ```bash
-# Créer le dossier projet
-mkdir -p ~/atelier/<slug>-website
 cd ~/atelier/<slug>-website
 
-# Initialiser Next.js depuis zéro
 npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --no-git
 
-# Installer les dépendances standards
 npm install lucide-react
 ```
 
 Configurer ensuite :
-- `next.config.mjs` : préparer la compatibilité `output: 'export'` et `output: 'standalone'`
-- `tailwind.config.ts` : définir les variables CSS du client
-- `src/app/globals.css` : variables CSS avec la palette du plan
+- `next.config.mjs` : compatibilité `output: 'export'` et `output: 'standalone'`
+- `tailwind.config.ts` : variables CSS du client
+- `src/app/globals.css` : palette issue du plan design approuvé
 
 ---
 
@@ -76,26 +83,17 @@ Pour chaque section :
 
 ---
 
-## Étape 5 — Initialiser la documentation .docs/
+## Étape 5 — Mettre à jour la documentation .docs/
 
-Créer `~/atelier/<slug>-website/.docs/` avec tous les fichiers de base :
+Le `.docs/` a été créé par `new-project` avec des guides squelettes.
 
-```bash
-mkdir -p ~/atelier/<slug>-website/.docs/Tasks
-mkdir -p ~/atelier/<slug>-website/.docs/Issues
-```
-
-Créer les fichiers guides pré-remplis avec le contexte du projet :
-- `[1]_PROJECT_DETAILS.md` — données du client
-- `[2]_DESIGN_GUIDE.md` — palette, typographie, décisions visuelles du plan
-- `[3]_CODE_GUIDE.md` — architecture du projet
-- `[4]_SEO_GUIDE.md` — mots-clés, schémas, pages
-- `[5]_DATABASE_GUIDE.md` — laisser vide si vitrine, remplir si boutique
-- `[6]_DEPENDENCIES_GUIDE.md` — packages installés
-- `[7]_COMMON_ISSUES.md` — structure vide prête
-- `[8]_TASKS_DONE.md` — première entrée : "Build initial"
-
-Créer `~/atelier/<slug>-website/AGENTS.md` (projet-specific).
+À cette étape, remplir les guides avec le contenu réel du build :
+- `[2]_DESIGN_GUIDE.md` — compléter palette (hex), typographie, décisions visuelles du plan approuvé
+- `[3]_CODE_GUIDE.md` — documenter l'architecture réelle du projet
+- `[4]_SEO_GUIDE.md` — ajouter les mots-clés, métadonnées par page, schémas
+- `[5]_DATABASE_GUIDE.md` — remplir si boutique avec backend, laisser vide sinon
+- `[6]_DEPENDENCIES_GUIDE.md` — lister tous les packages installés
+- Ajouter dans `[8]_TASKS_DONE.md` une entrée pour le build initial
 
 ---
 
