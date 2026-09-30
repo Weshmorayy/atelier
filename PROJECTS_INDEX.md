@@ -3,6 +3,7 @@
 | Client | Slug | Repo GitHub | Type | Ville | Statut | Date |
 |--------|------|-------------|------|-------|--------|------|
 | Pâtisserie Docteur Cakes | docteurcakes-v2-website | Weshmorayy/docteurcakes-v2-website | Vitrine+Catalogue | Abidjan (Cocody) | 🔵 En cours | 2026-09 |
+| Continental | continental-website | Weshmorayy/continental-website | Boutique en ligne | Dakar | 🔵 En cours | 2026-09 |
 
 ---
 

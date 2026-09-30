@@ -20,15 +20,21 @@ ls ~/atelier/<slug>-website/.docs/
 
 Si absent → demander à l'USER de lancer `new-project` d'abord.
 
-Une fois confirmé, initialiser Next.js dans ce dossier :
+Une fois confirmé, initialiser le projet depuis le **tech-template** Atelier :
 
 ```bash
+# Copier le template dans le dossier projet
+cp -r ~/atelier/tech-template/. ~/atelier/<slug>-website/
+
 cd ~/atelier/<slug>-website
 
-npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --no-git
-
-npm install lucide-react
+# Installer les dépendances
+npm install
 ```
+
+> ✅ Le template contient déjà : Next.js 14, TypeScript strict, Tailwind configuré avec variables CSS, lucide-react, structure src/ complète, SEO helpers, sitemap, robots, whatsapp.ts.
+
+Ne PAS lancer `create-next-app` — le template remplace cette étape.
 
 Configurer ensuite :
 - `next.config.mjs` : compatibilité `output: 'export'` et `output: 'standalone'`

@@ -71,6 +71,7 @@ Chaque site est une commande unique. Pas de réutilisation de structure, de layo
   Skill : web-builder
   Prompt : "Commence le site de <NomClient>"
   Produit : code complet + push GitHub
+  Commencer par : cp -r ~/atelier/tech-template/. ~/atelier/<slug>-website/ && npm install
 ```
 
 ---

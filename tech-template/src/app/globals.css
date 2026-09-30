@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ════════════════════════════════════════════════════════════════
+   PALETTE CLIENT — Remplir depuis le plan design approuvé
+   ════════════════════════════════════════════════════════════════
+   
+   Instructions :
+   - Ces valeurs DOIVENT venir du logo et des assets réels du client
+   - Ne jamais utiliser "from-indigo-500 to-purple-600" ou équivalent
+   - Vérifier le contraste WCAG AA (ratio ≥ 4.5:1 pour le texte)
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* Fonds */
+  --color-bg-primary: #FFFFFF;      /* ← Remplacer */
+  --color-bg-secondary: #F5F5F5;    /* ← Remplacer */
+  --color-bg-accent: #000000;       /* ← Remplacer */
+
+  /* Textes */
+  --color-text-primary: #111111;    /* ← Remplacer */
+  --color-text-body: #444444;       /* ← Remplacer */
+  --color-text-muted: #888888;      /* ← Remplacer */
+
+  /* Accent / CTA */
+  --color-accent: #000000;          /* ← Remplacer */
+  --color-accent-hover: #333333;    /* ← Remplacer */
+
+  /* Bordures */
+  --color-border: #E5E5E5;          /* ← Remplacer */
+
+  /* Typographie */
+  --font-heading: 'Inter', sans-serif;   /* ← Remplacer */
+  --font-body: 'Inter', sans-serif;      /* ← Remplacer */
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESET & BASE
+   ════════════════════════════════════════════════════════════════ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   UTILITAIRES GLOBAUX
+   ════════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+  /* Conteneur standard */
+  .container-site {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section plein viewport */
+  .section-full {
+    @apply min-h-screen flex items-center;
+  }
+
+  /* Transitions mesurées (pas d'animate-bounce) */
+  .transition-site {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Focus visible accessible */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2;
+  }
+}
